@@ -6,6 +6,8 @@ import Footer from '../components/Footer';
 
 import './gallery.css';
 
+const ASPECT_RATIO = 3 / 2;
+
 function GalleryPage(props) {
   const { data } = props;
   return (
@@ -18,7 +20,10 @@ function GalleryPage(props) {
             <a className="Gallery__item" key={edge.node.relativePath}>
               <Img
                 className="Gallery__thumbnail"
-                sizes={edge.node.childImageSharp.sizes}
+                sizes={{
+                  ...edge.node.childImageSharp.sizes,
+                  aspectRatio: ASPECT_RATIO,
+                }}
               />
             </a>
           ))}
