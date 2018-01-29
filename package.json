@@ -10,7 +10,7 @@
     "develop": "gatsby develop",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "clean": "rimraf public",
+    "clean": "rimraf public .cache",
     "deploy": "npm run build && gh-pages -d public",
     "cname": "echo \"www.boughtonplace.co.uk\" > public/CNAME",
     "precommit": "lint-staged"
