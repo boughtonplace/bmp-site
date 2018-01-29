@@ -19,11 +19,7 @@ function Index(props) {
         />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=EB+Garamond"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Nunito+Sans:700"
+          href="https://fonts.googleapis.com/css?family=EB+Garamond|Nunito+Sans:700"
         />
       </Helmet>
       <Header
