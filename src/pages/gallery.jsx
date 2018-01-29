@@ -11,13 +11,17 @@ function GalleryPage(props) {
   return (
     <div className="Gallery">
       <div>
-        {data.files.edges.slice().sort(
-          (a, b) => (a.node.relativePath > b.node.relativePath ? 1 : -1)
-        ).map((edge) => (
-          <a className="Gallery__item" key={edge.node.relativePath}>
-            <Img className="Gallery__thumbnail" sizes={edge.node.childImageSharp.sizes} />
-          </a>
-        ))}
+        {data.files.edges
+          .slice()
+          .sort((a, b) => (a.node.relativePath > b.node.relativePath ? 1 : -1))
+          .map((edge) => (
+            <a className="Gallery__item" key={edge.node.relativePath}>
+              <Img
+                className="Gallery__thumbnail"
+                sizes={edge.node.childImageSharp.sizes}
+              />
+            </a>
+          ))}
       </div>
       <div style={{ clear: 'both' }} />
       <Footer />
@@ -28,26 +32,32 @@ function GalleryPage(props) {
 GalleryPage.propTypes = {
   data: PropTypes.shape({
     files: PropTypes.shape({
-      edges: PropTypes.arrayOf(PropTypes.shape({
-        node: PropTypes.shape({
-          relativePath: PropTypes.string.isRequired,
-          childImageSharp: PropTypes.shape({
-            sizes: PropTypes.object.isRequired,
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            relativePath: PropTypes.string.isRequired,
+            childImageSharp: PropTypes.shape({
+              sizes: PropTypes.object.isRequired,
+            }).isRequired,
           }).isRequired,
-        }).isRequired,
-      }).isRequired).isRequired,
+        }).isRequired
+      ).isRequired,
     }).isRequired,
   }).isRequired,
 };
 
-GalleryPage.defaultProps = {
-};
+GalleryPage.defaultProps = {};
 
 export default GalleryPage;
 
 export const query = graphql`
   query GalleryImagesQuery {
-    files: allFile(filter:{sourceInstanceName:{eq:"gallery"},extension:{eq:"jpg"}}) {
+    files: allFile(
+      filter: {
+        sourceInstanceName: { eq: "gallery" }
+        extension: { eq: "jpg" }
+      }
+    ) {
       edges {
         node {
           relativePath

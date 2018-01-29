@@ -46,7 +46,10 @@ export default HomePage;
 
 export const query = graphql`
   query HeroImageQuery {
-    heroImage: file(sourceInstanceName: {eq: "images"}, relativePath: { eq: "index/Hero.jpg" }) {
+    heroImage: file(
+      sourceInstanceName: { eq: "images" }
+      relativePath: { eq: "index/Hero.jpg" }
+    ) {
       childImageSharp {
         sizes(maxWidth: 1170, quality: 85) {
           ...GatsbyImageSharpSizes_noBase64
