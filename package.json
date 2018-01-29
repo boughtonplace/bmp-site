@@ -6,12 +6,13 @@
   "author": "Tim Kendrick <timkendrick@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "npm run format && npm run lint && npm run clean && gatsby build",
+    "build": "npm run format && npm run lint && npm run clean && gatsby build && npm run cname",
     "develop": "gatsby develop",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "clean": "rimraf public",
     "deploy": "npm run build && gh-pages -d public",
+    "cname": "echo \"www.boughtonplace.co.uk\" > public/CNAME",
     "precommit": "lint-staged"
   },
   "lint-staged": {
