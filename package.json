@@ -11,7 +11,7 @@
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "clean": "rimraf public .cache",
-    "deploy": "npm run build && gh-pages -d public",
+    "deploy": "npm run build && gh-pages -d public -m \"Deploy site\"",
     "cname": "echo \"www.boughtonplace.co.uk\" > public/CNAME",
     "precommit": "lint-staged"
   },
