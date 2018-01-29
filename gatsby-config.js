@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/bmp-site',
   siteMetadata: {
     title: 'Boughton Monchelsea Place',
     subtitle: 'Maidstone, Kent ME17 4BU',
