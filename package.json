@@ -9,12 +9,12 @@
     "build": "npm run format && npm run lint && gatsby build",
     "develop": "gatsby develop",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
-    "format": "prettier --trailing-comma es5 --single-quote --arrow-parens always --write \"src/**/*.{js,jsx}\"",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "deploy": "npm run lint && gatsby build --prefix-paths && gh-pages -d public",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": ["eslint --fix", "prettier --trailing-comma es5 --single-quote --arrow-parens always --write", "git add"]
+    "src/**/*.{js,jsx}": ["eslint --fix", "prettier --write", "git add"]
   },
   "repository": {
     "type": "git",
