@@ -1,0 +1,22 @@
+.LinkButton {
+  display: inline-block;
+  padding: 15px 20px;
+  border: 2px solid #605040;
+  font-family: 'Nunito Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.LinkButton:link,
+.LinkButton:visited {
+  color: #605040;
+}
+
+.LinkButton:hover,
+.LinkButton:active {
+  color: #fdffed;
+  background-color: #605040;
+}

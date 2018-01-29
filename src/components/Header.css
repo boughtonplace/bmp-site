@@ -1,0 +1,44 @@
+.Header {
+  margin-top: 32px;
+  margin-bottom: 40px;
+}
+
+.Header__title,
+.Header__subtitle {
+  color: #403025;
+}
+
+.Header__link,
+.Header__link:link,
+.Header__link:active,
+.Header__link:hover,
+.Header__link:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.Header__subtitle {
+  margin-top: -20px;
+}
+
+@media (min-width: 768px) {
+  .Header {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  .Header__subtitle {
+    margin-top: -40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .Header {
+    margin-top: 80px;
+  }
+
+  .Header__subtitle {
+    margin-top: -50px;
+    margin-bottom: 80px;
+  }
+}
