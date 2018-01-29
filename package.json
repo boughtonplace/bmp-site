@@ -14,7 +14,7 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": ["eslint --fix", "prettier --write", "git add"]
+    "src/**/*.{js,jsx}": ["eslint --fix", "prettier --trailing-comma es5 --single-quote --arrow-parens always --write", "git add"]
   },
   "repository": {
     "type": "git",
