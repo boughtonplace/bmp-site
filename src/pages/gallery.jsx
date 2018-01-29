@@ -13,20 +13,17 @@ function GalleryPage(props) {
   return (
     <div className="Gallery">
       <div>
-        {data.files.edges
-          .slice()
-          .sort((a, b) => (a.node.relativePath > b.node.relativePath ? 1 : -1))
-          .map((edge) => (
-            <a className="Gallery__item" key={edge.node.relativePath}>
-              <Img
-                className="Gallery__thumbnail"
-                sizes={{
-                  ...edge.node.childImageSharp.sizes,
-                  aspectRatio: ASPECT_RATIO,
-                }}
-              />
-            </a>
-          ))}
+        {data.files.edges.map((edge) => (
+          <a className="Gallery__item" key={edge.node.relativePath}>
+            <Img
+              className="Gallery__thumbnail"
+              sizes={{
+                ...edge.node.childImageSharp.sizes,
+                aspectRatio: ASPECT_RATIO,
+              }}
+            />
+          </a>
+        ))}
       </div>
       <div style={{ clear: 'both' }} />
       <Footer />
@@ -62,6 +59,7 @@ export const query = graphql`
         sourceInstanceName: { eq: "gallery" }
         extension: { eq: "jpg" }
       }
+      sort: { order: ASC, fields: [relativePath] }
     ) {
       edges {
         node {
