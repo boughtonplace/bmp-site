@@ -6,15 +6,20 @@
   "author": "Tim Kendrick <timkendrick@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "npm run format && npm run lint && gatsby build",
+    "build": "npm run format && npm run lint && npm run clean && gatsby build",
     "develop": "gatsby develop",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "deploy": "npm run lint && gatsby build && gh-pages -d public",
+    "clean": "rimraf public",
+    "deploy": "npm run build && gh-pages -d public",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": ["eslint --fix", "prettier --write", "git add"]
+    "src/**/*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -40,6 +45,7 @@
     "prettier": "^1.0.0",
     "prop-types": "^15.0.0",
     "react": "^15.0.0",
-    "react-helmet": "^5.0.0"
+    "react-helmet": "^5.0.0",
+    "rimraf": "^2.0.0"
   }
 }
