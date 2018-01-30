@@ -20,8 +20,8 @@ function HomePage(props) {
         <p>
           Boughton Monchelsea Place is an exquisite venue which may be hired{' '}
           <br className="hidden-xs" /> throughout the year for location shoots
-          and corporate dining. <br className="hidden-xs" /> We also offer
-          garden visits from April to September.
+          and corporate dining for up to 50. <br className="hidden-xs" /> We
+          also offer garden visits from April to September.
         </p>
         <p>
           <LinkButton href="/gallery">View gallery</LinkButton>
