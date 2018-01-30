@@ -5,6 +5,7 @@
 
 .Header__title,
 .Header__subtitle {
+  text-align: center;
   color: #403025;
 }
 
