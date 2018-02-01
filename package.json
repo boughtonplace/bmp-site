@@ -33,6 +33,8 @@
   "devDependencies": {
     "@timkendrick/eslint-config": "^1.0.0",
     "eslint": "^4.0.0",
+    "eslint-config-prettier": "^2.0.0",
+    "eslint-plugin-prettier": "^2.0.0",
     "gatsby": "^1.0.0",
     "gatsby-image": "^1.0.0",
     "gatsby-link": "^1.0.0",

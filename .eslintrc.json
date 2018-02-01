@@ -1,6 +1,9 @@
 {
   "root": true,
-  "extends": "@timkendrick/eslint-config/react",
+  "extends": [
+    "@timkendrick/eslint-config/react",
+    "plugin:prettier/recommended"
+  ],
   "rules": {
     "import/no-extraneous-dependencies": "off",
     "jsx-a11y/anchor-is-valid": "off"
