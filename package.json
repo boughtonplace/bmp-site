@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/boughtonplace/bmp-site/issues"
   },
-  "homepage": "https://github.com/boughtonplace/bmp-site#readme",
+  "homepage": "http://www.boughtonplace.co.uk/",
   "devDependencies": {
     "@timkendrick/eslint-config": "^1.0.0",
     "eslint": "^4.0.0",
@@ -38,7 +38,7 @@
     "gatsby-link": "^1.0.0",
     "gatsby-plugin-react-helmet": "^2.0.0",
     "gatsby-plugin-sharp": "^1.0.0",
-    "gatsby-source-filesystem": "1.5.15",
+    "gatsby-source-filesystem": "^1.0.0",
     "gatsby-transformer-sharp": "^1.0.0",
     "gh-pages": "^1.0.0",
     "husky": "^0.14.0",
