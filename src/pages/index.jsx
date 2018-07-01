@@ -18,10 +18,10 @@ function HomePage(props) {
       />
       <section className="Home__intro">
         <p>
-          Boughton Monchelsea Place is an exquisite venue which may be hired{' '}
-          <br className="hidden-xs" /> throughout the year for location shoots
-          and corporate dining for up to 50. <br className="hidden-xs" /> We
-          also offer garden visits from April to September.
+          Boughton Monchelsea Place is an exquisite venue which{' '}
+          <br className="hidden-xs" />may be hired throughout the year for
+          location shoots. <br className="hidden-xs" />We also offer garden
+          visits from April to September.
         </p>
         <p>
           <LinkButton href="/gallery">View gallery</LinkButton>
