@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -17,8 +18,8 @@ function GalleryPage(props) {
           <a className="Gallery__item" key={edge.node.relativePath}>
             <Img
               className="Gallery__thumbnail"
-              sizes={{
-                ...edge.node.childImageSharp.sizes,
+              fluid={{
+                ...edge.node.childImageSharp.fluid,
                 aspectRatio: ASPECT_RATIO,
               }}
             />
@@ -33,13 +34,31 @@ function GalleryPage(props) {
 
 GalleryPage.propTypes = {
   data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        subtitle: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+      }).isRequired,
+    }).isRequired,
     files: PropTypes.shape({
       edges: PropTypes.arrayOf(
         PropTypes.shape({
           node: PropTypes.shape({
             relativePath: PropTypes.string.isRequired,
             childImageSharp: PropTypes.shape({
-              sizes: PropTypes.object.isRequired,
+              fluid: PropTypes.shape({
+                aspectRatio: PropTypes.number.isRequired,
+                src: PropTypes.string.isRequired,
+                srcSet: PropTypes.string.isRequired,
+                sizes: PropTypes.string.isRequired,
+                base64: PropTypes.string,
+                tracedSVG: PropTypes.string,
+                srcWebp: PropTypes.string,
+                srcSetWebp: PropTypes.string,
+                media: PropTypes.string,
+              }),
             }).isRequired,
           }).isRequired,
         }).isRequired
@@ -53,20 +72,28 @@ GalleryPage.defaultProps = {};
 export default GalleryPage;
 
 export const query = graphql`
-  query GalleryImagesQuery {
+  query GalleryPageQuery {
+    site {
+      siteMetadata {
+        title
+        subtitle
+        description
+        keywords
+      }
+    }
     files: allFile(
       filter: {
         sourceInstanceName: { eq: "gallery" }
         extension: { eq: "jpg" }
       }
-      sort: { order: ASC, fields: [relativePath] }
+      sort: { relativePath: ASC }
     ) {
       edges {
         node {
           relativePath
           childImageSharp {
-            sizes(maxWidth: 780, quality: 85) {
-              ...GatsbyImageSharpSizes_noBase64
+            fluid(maxWidth: 780, quality: 85) {
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }

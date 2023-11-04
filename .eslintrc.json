@@ -1,14 +1,59 @@
 {
   "root": true,
-  "extends": [
-    "@timkendrick/eslint-config/react",
-    "plugin:prettier/recommended"
-  ],
-  "rules": {
-    "import/no-extraneous-dependencies": "off",
-    "jsx-a11y/anchor-is-valid": "off"
-  },
+  "extends": ["airbnb", "plugin:prettier/recommended"],
   "globals": {
     "graphql": false
+  },
+  "rules": {
+    "arrow-parens": ["error", "always"],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ],
+    "consistent-return": "off",
+    "dot-notation": "off",
+    "func-names": "off",
+    "function-paren-newline": "off",
+    "import/no-extraneous-dependencies": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-console": "error",
+    "no-else-return": "off",
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    "no-use-before-define": ["error", "nofunc"],
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "consistent": true
+      }
+    ],
+    "prefer-destructuring": "off",
+    "quote-props": "off",
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "vars-on-top": "off"
   }
 }

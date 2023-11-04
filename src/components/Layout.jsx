@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import Header from '../components/Header';
+import Header from './Header';
 
-import './index.css';
+import './Layout.css';
 
-function Index(props) {
+function Layout(props) {
   const { data, children } = props;
   return (
     <div>
@@ -26,12 +26,12 @@ function Index(props) {
         title={data.site.siteMetadata.title}
         subtitle={data.site.siteMetadata.subtitle}
       />
-      <main className="container">{children()}</main>
+      <main className="container">{children}</main>
     </div>
   );
 }
 
-Index.propTypes = {
+Layout.propTypes = {
   data: PropTypes.shape({
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
@@ -42,24 +42,11 @@ Index.propTypes = {
       }).isRequired,
     }).isRequired,
   }).isRequired,
-  children: PropTypes.func,
+  children: PropTypes.element,
 };
 
-Index.defaultProps = {
+Layout.defaultProps = {
   children: () => undefined,
 };
 
-export default Index;
-
-export const query = graphql`
-  query IndexQuery {
-    site {
-      siteMetadata {
-        title
-        subtitle
-        description
-        keywords
-      }
-    }
-  }
-`;
+export default Layout;
