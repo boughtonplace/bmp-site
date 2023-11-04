@@ -1,2 +1,0 @@
-webpackJsonp([60335399758886],{94:function(o,e){o.exports={data:{site:{siteMetadata:{title:"Boughton Monchelsea Place",subtitle:"Maidstone, Kent ME17 4BU",description:"Boughton Monchelsea Place is an exquisite venue which may be hired throughout the year for location shoots and corporate dining for up to 50. We also offer garden visits from April to September.",keywords:["location","shoots","photo","stately","home","elizabethan","manor","corporate"]}}},layoutContext:{}}}});
-//# sourceMappingURL=path----b1042da95bddacae0f09.js.map
