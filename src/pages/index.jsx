@@ -19,11 +19,16 @@ function HomePage(props) {
       />
       <section className="Home__intro">
         <p>
-          Boughton Monchelsea Place is an exquisite venue which{' '}
+          Boughton Monchelsea Place is a beautiful historic venue which{' '}
           <br className="hidden-xs" />
           may be hired throughout the year for location shoots.{' '}
+        </p>
+        <p>
+          We also offer private garden visits for groups of 10-50 people,{' '}
           <br className="hidden-xs" />
-          We also offer garden visits from April to September.
+          on weekdays from April to September. Cost is £10 ph,{' '}
+          <br className="hidden-xs" />
+          to include tea and biscuits. Pre-booking essential.
         </p>
         <p>
           <LinkButton href="/gallery">View gallery</LinkButton>
